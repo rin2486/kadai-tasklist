@@ -14,7 +14,7 @@
           <% if current_user == task.user %>
             <%= link_to "Delete", task, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
             <%= link_to "Edit", edit_task_path(task), class: 'btn btn-warning btn-sm' %>
-            
+            <%= link_to "Info", task_path(task), class: 'btn btn-info btn-sm' %>
           <% end %>
         </div>
         </div>
