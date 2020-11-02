@@ -6,14 +6,9 @@ class TasksController < ApplicationController
     @tasks = Task.all
     
     if logged_in?
-      @task = current_user.tasks.build  # form_with 用
+      @task = current_user.tasks.build
       @tasks = current_user.tasks.order(id: :desc).page(params[:page])
     end
-  end
-
-
-  def new
-    @task = Task.new
   end
 
   def create
@@ -33,7 +28,7 @@ class TasksController < ApplicationController
   def update
     
     if @task.update(task_params)
-      flash[:success] = 'タスクは正常に更新されました'
+      flash[:success] = 'タスクは正常に更新されまし!た'
       redirect_to @task
     else
       flash.now[:danger] = 'タスクは更新されませんでした'
